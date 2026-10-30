@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bamako Air Transit - Dédouanement Express Aéroport Modibo Keita (Senou)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Configuration Personnalisée Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0B1E36',
+                            900: '#0A2540',
+                            950: '#051329',
+                        },
+                        gold: {
+                            400: '#F5B041',
+                            500: '#F4A261',
+                            600: '#E67E22',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(10, 37, 64, 0.88), rgba(5, 19, 41, 0.92)), 
+                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+        .pattern-bg {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-gold-500 selection:text-navy-950">
+
+    <!-- BARRE D'INFORMATION HAUTE -->
+    <div class="bg-navy-950 text-slate-300 text-xs sm:text-sm py-2.5 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-gold-500"></i> Zone Fret, Aéroport Modibo Keita - Bamako Senou</span>
+                <span class="hidden md:flex items-center gap-1.5"><i class="fa-solid fa-clock text-gold-500"></i> Permanence Douane 24h/7j</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:+22370000000" class="hover:text-gold-400 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone text-gold-500"></i> +223 70 00 00 00
+                </a>
+                <span class="text-slate-600">|</span>
+                <a href="https://wa.me/22370000000" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">
+                    <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp Direct
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- EN-TÊTE ET NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 bg-navy-900 rounded-xl flex items-center justify-center text-gold-500 shadow-lg group-hover:bg-navy-800 transition-colors">
+                        <i class="fa-solid fa-plane-departure text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold text-navy-900 tracking-tight block leading-none">BAMAKO AIR<span class="text-gold-500"> TRANSIT</span></span>
+                        <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Dédouanement Express Aérien</span>
+                    </div>
+                </a>
+
+                <!-- Navigation Desktop -->
+                <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm">
+                    <a href="#accueil" class="hover:text-navy-900 transition-colors">Accueil</a>
+                    <a href="#services" class="hover:text-navy-900 transition-colors">Nos Services</a>
+                    <a href="#a-propos" class="hover:text-navy-900 transition-colors">Présence Aéroport</a>
+                    <a href="#estimation" class="hover:text-navy-900 transition-colors">Simulateur Devis</a>
+                    <a href="#contact" class="hover:text-navy-900 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Bouton Action WhatsApp -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="https://wa.me/22370000000?text=Bonjour,%20j'ai%20besoin%20d'assistance%20pour%20un%20d%C3%A9douanement%20a%20l'a%C3%A9roport." 
+                       target="_blank" 
+                       class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm px-4 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Urgence Fret</span>
+                    </a>
+                </div>
+
+                <!-- Bouton Menu Mobile -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-700 p-2 focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#accueil" class="mobile-link block py-2 text-slate-700 font-medium hover:text-navy-900">Accueil</a>
+            <a href="#services" class="mobile-link block py-2 text-slate-700 font-medium hover:text-navy-900">Nos Services</a>
+            <a href="#a-propos" class="mobile-link block py-2 text-slate-700 font-medium hover:text-navy-900">Présence Aéroport</a>
+            <a href="#estimation" class="mobile-link block py-2 text-slate-700 font-medium hover:text-navy-900">Simulateur Devis</a>
+            <a href="#contact" class="mobile-link block py-2 text-slate-700 font-medium hover:text-navy-900">Contact</a>
+            <a href="https://wa.me/22370000000" target="_blank" class="w-full mt-2 inline-flex justify-center items-center gap-2 bg-emerald-600 text-white font-semibold py-3 rounded-lg">
+                <i class="fa-brands fa-whatsapp text-xl"></i> Contact WhatsApp Direct
+            </a>
+        </div>
+    </header>
+
+    <!-- SECTION HERO / EN-TÊTE PRINCIPALE -->
+    <section id="accueil" class="hero-bg relative text-white py-20 lg:py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <!-- Badge d'Avertissement -->
+                <div class="inline-flex items-center gap-2 bg-gold-500/20 border border-gold-500/40 px-3.5 py-1.5 rounded-full text-gold-400 font-medium text-xs sm:text-sm mb-6 backdrop-blur-md">
+                    <i class="fa-solid fa-plane-arrival"></i> Basé à l'Aéroport Modibo Keita (Senou)
+                </div>
+                
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+                    Transitaire Fret Aérien - <span class="text-gold-500">Bamako Senou</span>
+                </h1>
+                
+                <p class="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed">
+                    Experts en dédouanement express, gestion LTA/AWB et enlèvement rapide de colis. Prise en charge immédiate de vos marchandises dès leur arrivée sur le tarmac de l'aéroport de Bamako.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/22370000000?text=Bonjour,%20j'ai%20une%20marchandise%20a%20l'a%C3%A9roport%20et%20je%20souhaite%20un%20d%C3%A9douanement." 
+                       target="_blank" 
+                       class="inline-flex justify-center items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-7 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Contact WhatsApp Direct
+                    </a>
+                    <a href="#estimation" class="inline-flex justify-center items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-7 py-4 rounded-xl backdrop-blur-sm transition-all">
+                        <i class="fa-solid fa-calculator text-gold-400"></i> Simuler un Devis
+                    </a>
+                </div>
+
+                <!-- Chiffres Clés -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-12 pt-8 border-t border-white/10">
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-gold-500">100%</div>
+                        <div class="text-xs sm:text-sm text-slate-300">Spécialiste Fret Aérien</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-gold-500">24/7</div>
+                        <div class="text-xs sm:text-sm text-slate-300">Permanence Aéroport</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-gold-500">Express</div>
+                        <div class="text-xs sm:text-sm text-slate-300">Dédouanement Accéléré</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION SERVICES -->
+    <section id="services" class="py-20 pattern-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-extrabold text-gold-600 uppercase tracking-widest mb-2">Domaines d'Expertise</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">Services Fret & Douane Aéroportuaire</p>
+                <div class="w-16 h-1 bg-gold-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md border border-slate-100 transition-all group">
+                    <div class="w-14 h-14 bg-navy-900/5 group-hover:bg-navy-900 text-navy-900 group-hover:text-gold-500 rounded-xl flex items-center justify-center text-2xl mb-6 transition-all">
+                        <i class="fa-solid fa-file-invoice"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Dédouanement LTA / AWB</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Traitement express des Lettres de Transport Aérien (LTA / AWB). Saisie rapide des déclarations douanières et main-levée immédiate.
+                    </p>
+                    <ul class="text-xs text-slate-500 space-y-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Suivi des vols de fret</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Apurement des manifestes</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md border border-slate-100 transition-all group">
+                    <div class="w-14 h-14 bg-navy-900/5 group-hover:bg-navy-900 text-navy-900 group-hover:text-gold-500 rounded-xl flex items-center justify-center text-2xl mb-6 transition-all">
+                        <i class="fa-solid fa-warehouse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Entreposage sous Douane</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Accès privilégié aux zones de stockage sécurisées du Magasin Cale de l'aéroport pour éviter les frais de magasinage excessifs.
+                    </p>
+                    <ul class="text-xs text-slate-500 space-y-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Inspection physique assistée</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Transfert sécurisé</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md border border-slate-100 transition-all group">
+                    <div class="w-14 h-14 bg-navy-900/5 group-hover:bg-navy-900 text-navy-900 group-hover:text-gold-500 rounded-xl flex items-center justify-center text-2xl mb-6 transition-all">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Colis Urgents & Effets Personnels</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Gestion spécialisée des paquets express, bagages non accompagnés, pièces détachées industrielles et colis médicaux prioritaires.
+                    </p>
+                    <ul class="text-xs text-slate-500 space-y-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Procédure accélérée 24h</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Livraison possible à Bamako</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PRÉSENCE PHYSIQUE / À PROPOS -->
+    <section id="a-propos" class="py-20 bg-navy-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-xs font-extrabold text-gold-400 uppercase tracking-widest mb-2">Notre Implantation</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold mb-6 leading-tight">Présence Physiquement Réelle à l'Aéroport de Senou</h3>
+                    <p class="text-slate-300 text-base mb-6 leading-relaxed">
+                        Contrairement aux agences basées en ville, nos agents sont installés en permanence dans la zone Fret de l'Aéroport International Modibo Keita. Nous sommes au contact direct des équipes de la douane malienne et des compagnies aériennes.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 bg-navy-800/60 rounded-xl border border-navy-800">
+                            <div class="w-10 h-10 bg-gold-500/20 text-gold-400 rounded-lg flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-stopwatch text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white">Réactivité Immédiate</h4>
+                                <p class="text-slate-400 text-sm">Prise en charge de votre dossier dès la descente de l'avion.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 bg-navy-800/60 rounded-xl border border-navy-800">
+                            <div class="w-10 h-10 bg-gold-500/20 text-gold-400 rounded-lg flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-shield-halved text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white">Sécurité de vos Marchandises</h4>
+                                <p class="text-slate-400 text-sm">Supervision directe de la manutention et de la sortie magasin.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80" alt="Zone Fret Aéroport Bamako" class="rounded-2xl shadow-2xl object-cover w-full h-[400px]">
+                        <div class="absolute -bottom-6 -left-6 bg-gold-500 text-navy-950 p-6 rounded-2xl shadow-xl font-bold hidden sm:block">
+                            <div class="text-3xl font-extrabold">ZONE FRET</div>
+                            <div class="text-xs uppercase tracking-wider">Aéroport Modibo Keita</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION CALCULATEUR / SIMULATEUR DE DEVIS -->
+    <section id="estimation" class="py-20 bg-slate-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-xs font-extrabold text-gold-600 uppercase tracking-widest mb-2">Simulateur Interactif</h2>
+                <p class="text-3xl font-extrabold text-navy-900">Estimez vos Frais de Transit (FCFA)</p>
+                <p class="text-slate-600 text-sm mt-2">Obtenez une valeur indicative de nos honoraires et transmettez-la en un clic sur WhatsApp.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl p-6 sm:p-10 border border-slate-200">
+                <form id="calculator-form" onsubmit="return false;" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Type de marchandise -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-2">Type de Colis / Marchandise</label>
+                            <select id="cargo-type" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-navy-900">
+                                <option value="standard">Effets Personnels / Divers (Standard)</option>
+                                <option value="tech">Électronique & High-Tech</option>
+                                <option value="spare">Pièces Détachées / Équipements</option>
+                                <option value="perishable">Produits Périssables / Santé</option>
+                            </select>
+                        </div>
+
+                        <!-- Poids estimé -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-2">Poids Estimé (Kg)</label>
+                            <input type="number" id="cargo-weight" min="1" value="15" placeholder="Ex: 15" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-navy-900">
+                        </div>
+                    </div>
+
+                    <!-- Options supplémentaires -->
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-700 mb-2">Services Additionnels</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <label class="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-100">
+                                <input type="checkbox" id="opt-delivery" class="w-4 h-4 text-navy-900 rounded">
+                                <span class="text-xs text-slate-700 font-medium">Livraison sur Bamako</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-100">
+                                <input type="checkbox" id="opt-express" class="w-4 h-4 text-navy-900 rounded">
+                                <span class="text-xs text-slate-700 font-medium">Traitement Prioritaire Urgent</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Affichage du résultat -->
+                    <div class="bg-navy-950 text-white p-6 rounded-xl border border-navy-800 mt-6">
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                            <div>
+                                <span class="text-xs text-slate-400 block uppercase font-semibold">Estimation Honoraires Prestation</span>
+                                <span id="estimated-price" class="text-2xl sm:text-3xl font-extrabold text-gold-400">30 000 FCFA</span>
+                                <span class="text-[11px] text-slate-400 block mt-1">*Hors taxes, droits de douane officiels et frais d'entreposage</span>
+                            </div>
+                            
+                            <button type="button" id="whatsapp-send-btn" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3.5 rounded-xl transition-all shadow-md">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span>Demander par WhatsApp</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION CONTACT & FORMULAIRE -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Coordonnées locales -->
+                <div>
+                    <h2 class="text-xs font-extrabold text-gold-600 uppercase tracking-widest mb-2">Prendre Contact</h2>
+                    <h3 class="text-3xl font-extrabold text-navy-900 mb-6">Informations & Localisation</h3>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        Des questions sur l'arrivée de votre vol ou un numéro LTA ? Contactez directement nos agents sur le terrain à Bamako Senou.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-navy-900 text-gold-500 rounded-xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900">Adresse Complète</h4>
+                                <p class="text-slate-600 text-sm">Zone Fret & Magasin Cale, Aéroport International Modibo Keita - Senou, Bamako, Mali</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-navy-900 text-gold-500 rounded-xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900">Téléphones Directs</h4>
+                                <p class="text-slate-600 text-sm">+223 70 00 00 00 / +223 66 00 00 00</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-navy-900 text-gold-500 rounded-xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900">Courrier Électronique</h4>
+                                <p class="text-slate-600 text-sm">contact@bamako-airtransit.ml</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulaire -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                    <h4 class="text-xl font-bold text-navy-900 mb-6">Envoyez une demande écrite</h4>
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Votre Nom</label>
+                            <input type="text" required placeholder="Nom complet" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-navy-900">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Téléphone</label>
+                            <input type="tel" required placeholder="+223 -- -- -- --" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-navy-900">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Numéro LTA / AWB (Optionnel)</label>
+                            <input type="text" placeholder="Ex: 057-12345678" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-navy-900">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Détails de la demande</label>
+                            <textarea rows="3" required placeholder="Description de la marchandise ou question..." class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-navy-900"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-navy-900 hover:bg-navy-800 text-white font-bold py-3.5 rounded-xl shadow-md transition-all">
+                            Envoyer le message
+                        </button>
+                    </form>
+                    <div id="form-success" class="hidden mt-4 p-4 bg-emerald-100 text-emerald-800 rounded-xl text-sm text-center font-medium">
+                        Votre message a bien été pris en compte.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIED DE PAGE -->
+    <footer class="bg-navy-950 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-navy-800 rounded-lg flex items-center justify-center text-gold-500">
+                        <i class="fa-solid fa-plane-departure"></i>
+                    </div>
+                    <span class="text-lg font-bold text-white tracking-tight">BAMAKO AIR <span class="text-gold-500">TRANSIT</span></span>
+                </div>
+
+                <p class="text-xs text-center md:text-left">
+                    © 2026 Bamako Air Transit - Zone Fret Aéroport Modibo Keita (Senou), Bamako, Mali.
+                </p>
+
+                <div class="flex gap-4">
+                    <a href="https://wa.me/22370000000" target="_blank" class="w-9 h-9 bg-navy-900 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center transition-colors">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </a>
+                    <a href="tel:+22370000000" class="w-9 h-9 bg-navy-900 hover:bg-gold-500 hover:text-navy-950 text-white rounded-full flex items-center justify-center transition-colors">
+                        <i class="fa-solid fa-phone text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS JAVASCRIPT -->
+    <script>
+        // Gestion du Menu Mobile
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Calculateur de Devis Interactif
+        const cargoType = document.getElementById('cargo-type');
+        const cargoWeight = document.getElementById('cargo-weight');
+        const optDelivery = document.getElementById('opt-delivery');
+        const optExpress = document.getElementById('opt-express');
+        const priceDisplay = document.getElementById('estimated-price');
+        const whatsappBtn = document.getElementById('whatsapp-send-btn');
+
+        function calculateEstimate() {
+            const weight = parseFloat(cargoWeight.value) || 1;
+            let baseRate = 15000;
+            let perKgRate = 1000;
+
+            switch (cargoType.value) {
+                case 'tech':
+                    perKgRate = 1500;
+                    break;
+                case 'spare':
+                    perKgRate = 1200;
+                    break;
+                case 'perishable':
+                    perKgRate = 1800;
+                    break;
+                default:
+                    perKgRate = 1000;
+            }
+
+            let total = baseRate + (weight * perKgRate);
+
+            if (optDelivery.checked) total += 10000;
+            if (optExpress.checked) total += 15000;
+
+            priceDisplay.textContent = total.toLocaleString('fr-FR') + ' FCFA';
+            return total;
+        }
+
+        cargoType.addEventListener('change', calculateEstimate);
+        cargoWeight.addEventListener('input', calculateEstimate);
+        optDelivery.addEventListener('change', calculateEstimate);
+        optExpress.addEventListener('change', calculateEstimate);
+
+        // Transmission de la simulation vers WhatsApp
+        whatsappBtn.addEventListener('click', () => {
+            const weight = cargoWeight.value || 1;
+            const typeText = cargoType.options[cargoType.selectedIndex].text;
+            const price = priceDisplay.textContent;
+            const delivery = optDelivery.checked ? "Oui" : "Non";
+            const express = optExpress.checked ? "Oui" : "Non";
+
+            const message = `Bonjour Bamako Air Transit,%0A%0AJe souhaite faire dédouaner un colis à l'aéroport :%0A- *Type* : ${typeText}%0A- *Poids* : ${weight} kg%0A- *Livraison Bamako* : ${delivery}%0A- *Traitement urgent* : ${express}%0A- *Prix estimé* : ${price}%0A%0AMerci de me contacter pour la procédure.`;
+
+            window.open(`https://wa.me/22370000000?text=${message}`, '_blank');
+        });
+
+        // Soumission du Formulaire
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const successMsg = document.getElementById('form-success');
+            const form = document.getElementById('contact-form');
+            
+            successMsg.classList.remove('hidden');
+            form.reset();
+
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 4000);
+        }
+
+        // Calcul initial au chargement
+        calculateEstimate();
+    </script>
+</body>
+</html>
